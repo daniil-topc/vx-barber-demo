@@ -169,6 +169,8 @@
     .gallery { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
     @media (min-width: 768px) { .gallery { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
     @media (min-width: 1100px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+    /* Мало фото (2–3): крупные карточки в два столбца вместо полупустого ряда из четырёх */
+    @media (min-width: 768px) { .gallery--duo { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
     .shot {
       position: relative; padding: 0; border: 0; margin: 0;
       aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius);
@@ -309,6 +311,7 @@
       </div>
       <nav class="nav" aria-label="Розділи сайту">
         <a href="#works">Роботи</a>
+        <a href="#services">Послуги</a>
         <a href="#booking">Контакти</a>
       </nav>
       <a class="btn btn--primary" href="https://ig.me/m/v.x.barber" target="_blank" rel="noopener">Записатися</a>
@@ -321,7 +324,7 @@
       <div class="wrap hero__grid">
         <div class="hero__head">
           <p class="hero__meta">Барбер · Дніпро</p>
-          <h1 class="hero__title">V.X.<span>Barber</span></h1>
+          <h1 class="hero__title">V.X. <span>Barber</span></h1>
         </div>
         <div class="hero__body">
           <p class="hero__text">Справжні чоловічі стрижки. <strong>Швидкість та якість.</strong></p>
@@ -350,9 +353,25 @@
           </div>
         </div>
 
-        <div class="gallery" id="gallery">
+        <div class="gallery gallery--duo" id="gallery">
           <button class="shot" type="button"><img src="images/work-1.webp" alt="Чоловіча стрижка, робота @v.x.barber" width="360" height="640" loading="lazy"></button>
           <button class="shot" type="button"><img src="images/work-2.webp" alt="Чоловіча стрижка, робота @v.x.barber" width="360" height="640" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ПОСЛУГИ ========== -->
+    <section class="section services" id="services">
+      <div class="wrap services__grid">
+        <div class="reveal">
+          <p class="eyebrow">02 — Послуги</p>
+          <h2 class="section__title">Що<br>роблю</h2>
+        </div>
+        <div class="reveal">
+          <ol class="service-list">
+            <li class="service"><span class="service__num">01</span><span class="service__name">Чоловічі стрижки</span><span class="service__desc">Швидкість та якість.</span></li>
+          </ol>
+          <p class="services__note">Вартість уточнюйте в <a href="https://ig.me/m/v.x.barber" target="_blank" rel="noopener">Direct</a>.</p>
         </div>
       </div>
     </section>
@@ -360,7 +379,7 @@
     <!-- ========== ЗАПИС ========== -->
     <section class="section" id="booking">
       <div class="wrap">
-        <p class="eyebrow reveal">02 — Запис</p>
+        <p class="eyebrow reveal">03 — Запис</p>
         <h2 class="booking__title reveal">Записатися<br><span>на стрижку</span></h2>
 
         <div class="booking__grid reveal">
@@ -402,7 +421,7 @@
     <button class="lightbox__close" type="button" id="lightboxClose" aria-label="Закрити">
       <svg aria-hidden="true"><use href="#i-close"/></svg>
     </button>
-    <img id="lightboxImg" src="" alt="">
+    <img id="lightboxImg" alt="">
     <p class="lightbox__caption" id="lightboxCaption"></p>
   </dialog>
 
